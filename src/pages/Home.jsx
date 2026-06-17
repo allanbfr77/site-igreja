@@ -45,7 +45,7 @@ export default function Home({ go }) {
         <h1>{CHURCH.shortName}</h1>
         <p className="lead">
           Mais do que uma igreja, uma família que caminha junto. Venha adorar,
-          ouvir a Palavra e encontrar acolhimento — não importa de onde você vem.
+          ouvir a Palavra e encontrar acolhimento — há um lugar para você aqui.
         </p>
         <blockquote className="verse">
           “{CHURCH.verse.text}”
