@@ -64,7 +64,7 @@ export default function Home({ go }) {
 
       {/* BLOCOS DA HOME — layout editorial */}
       <div className="ed-home">
-        <section className="ed reveal ed-top">
+        <section className="ed reveal ed-top ed-cal">
           <div className="lead-col">
             <p className="kicker">{showMonth ? "Programação mensal" : "Programação semanal"}</p>
             {!showMonth ? (
@@ -140,7 +140,7 @@ export default function Home({ go }) {
           </div>
         </section>
 
-        <section className="ed reveal ed-top">
+        <section className="ed reveal ed-top ed-loc">
           <div className="lead-col">
             <p className="kicker">Localização</p>
             <h3>Como chegar</h3>
@@ -160,7 +160,7 @@ export default function Home({ go }) {
           </div>
         </section>
 
-        <section className="ed reveal ed-top">
+        <section className="ed reveal ed-top ed-hist">
           <div className="lead-col">
             <p className="kicker">Quem somos</p>
             <div className="bignum"><CountUp value={CHURCH.founded} /></div>

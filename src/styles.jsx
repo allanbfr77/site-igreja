@@ -257,6 +257,15 @@ const Styles = () => (
       .history{grid-template-columns:1fr;gap:22px}
       .ed-hist-title{font-size:26px}
       .ed-text{font-size:14px;line-height:1.7;margin-bottom:12px}
+      .ed-hist{text-align:center;justify-items:center}
+      .ed-hist .lead-col{display:flex;flex-direction:column;align-items:center}
+      .ed-hist .ed-text{max-width:100%;margin-left:auto;margin-right:auto}
+      .ed-cal,.ed-loc{justify-items:center;text-align:center}
+      .ed-cal .lead-col,.ed-loc .lead-col{display:flex;flex-direction:column;align-items:center}
+      .ed-cal .week-badges{justify-content:center}
+      .ed-cal .prog-col,.ed-loc .map-frame{width:100%}
+      .ed-cal .prog-col{text-align:left}
+      .ed-loc .addr{justify-content:center}
     }
     @media(max-width:520px){
       .bar button span{display:none}
