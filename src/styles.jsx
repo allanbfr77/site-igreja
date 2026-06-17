@@ -14,7 +14,7 @@ const Styles = () => (
       --sans:'Inter',system-ui,sans-serif;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    .app{font-family:var(--sans);color:var(--paper);background:var(--ink);
+    .app{font-family:var(--sans);color:var(--paper);background:var(--ink);font-size:17px;
       min-height:100vh;position:relative;overflow-x:hidden}
 
     /* ---------- FUNDO ANIMADO (Ken Burns + luz) ---------- */
@@ -53,7 +53,7 @@ const Styles = () => (
     .brand span{display:block;font-size:9.5px;letter-spacing:3px;color:var(--gold);margin-top:2px}
     .hdr-nav{display:flex;gap:4px}
     .hdr-nav button{background:none;border:0;color:var(--dim);font-family:var(--sans);
-      font-size:13px;letter-spacing:.4px;padding:8px 13px;border-radius:999px;cursor:pointer;
+      font-size:14px;letter-spacing:.4px;padding:8px 14px;border-radius:999px;cursor:pointer;
       transition:color .2s,background .2s}
     .hdr-nav button:hover{color:var(--paper)}
     .hdr-nav button.on{color:var(--ink);background:var(--gold);font-weight:500}
@@ -109,14 +109,14 @@ const Styles = () => (
       justify-content:center;padding:60px 0 48px}
     .hero h1{font-size:clamp(44px,8vw,92px);margin:18px 0 0}
     .hero h1 em{font-style:italic;color:var(--gold-hi)}
-    .hero .lead{font-size:clamp(15px,2vw,18px);color:var(--dim);max-width:540px;
+    .hero .lead{font-size:clamp(16px,2.1vw,20px);color:var(--dim);max-width:540px;
       margin-top:20px;line-height:1.6}
     .verse{margin-top:26px;padding-left:18px;border-left:2px solid var(--gold);
-      font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.3vw,21px);max-width:540px}
+      font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.4vw,23px);max-width:540px}
     .verse small{display:block;font-family:var(--sans);font-style:normal;font-size:11px;
       letter-spacing:2px;color:var(--gold);margin-top:8px}
     .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-    .btn{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:500;
+    .btn{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:500;
       padding:13px 22px;border-radius:999px;cursor:pointer;border:1px solid transparent;
       transition:transform .15s,background .2s,color .2s;text-decoration:none}
     .btn:hover{transform:translateY(-2px)}
@@ -136,7 +136,7 @@ const Styles = () => (
     .card::after{content:"";position:absolute;top:0;left:0;width:46px;height:46px;
       border-top:2px solid var(--gold);border-left:2px solid var(--gold);
       border-top-left-radius:18px;opacity:.5}
-    .card h3{font-size:26px;margin-bottom:4px}
+    .card h3{font-size:28px;margin-bottom:4px}
     /* rótulo dourado (PIX, TRANSFERÊNCIA, ONDE NOS ENCONTRAR, etc.) — tamanho único */
     .kicker{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;display:block}
     .card .kicker{margin-bottom:10px}
@@ -157,8 +157,8 @@ const Styles = () => (
     .slot .ev:first-child{padding-top:0}
     .slot .ev:last-child{padding-bottom:0}
     .slot .ev + .ev{border-top:1px solid rgba(255,255,255,.06)}
-    .slot .info b{font-family:var(--serif);font-size:18px;font-weight:500}
-    .slot .info p{font-size:12px;color:var(--dim);display:flex;align-items:center;gap:5px;margin-top:6px}
+    .slot .info b{font-family:var(--serif);font-size:20px;font-weight:500}
+    .slot .info p{font-size:13px;color:var(--dim);display:flex;align-items:center;gap:5px;margin-top:6px}
     .slot .info p svg{width:13px;height:13px;color:var(--gold)}
     .tag{font-size:9px;letter-spacing:1.5px;color:var(--ink);background:var(--gold);
       padding:3px 8px;border-radius:999px;font-weight:600}
@@ -199,7 +199,7 @@ const Styles = () => (
 
     /* história */
     .history{margin-top:26px;display:grid;grid-template-columns:1.4fr .8fr;gap:30px;align-items:center}
-    .history p{color:var(--dim);line-height:1.75;font-size:15px;margin-top:14px}
+    .history p{color:var(--dim);line-height:1.75;font-size:16px;margin-top:14px}
     .stat{text-align:center;padding:28px;border:1px solid var(--line);border-radius:16px;
       background:rgba(230,178,62,.05)}
     .stat .num{font-family:var(--serif);font-size:58px;color:var(--gold-hi);line-height:1}
@@ -215,10 +215,10 @@ const Styles = () => (
     html.snap .hero,
     html.snap .ed{scroll-snap-align:start;scroll-margin-top:var(--hdr)}
     .ed .lead-col .kicker{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
-    .ed .lead-col h3{font-size:30px;margin-top:12px}
+    .ed .lead-col h3{font-size:33px;margin-top:12px}
     .ed .addr{margin-top:16px}
     .ed-map{margin-top:0;height:300px}
-    .ed-text{color:var(--dim);line-height:1.8;font-size:15px;max-width:640px;margin-bottom:14px}
+    .ed-text{color:var(--dim);line-height:1.8;font-size:16px;max-width:640px;margin-bottom:14px}
     .ed-roles{color:var(--paper);font-size:14px;line-height:1.8;margin-top:2px}
     .ed-roles b{color:var(--gold);font-weight:500}
     .bignum{font-family:var(--serif);font-size:clamp(60px,9vw,90px);color:var(--gold-hi);line-height:.95;margin-top:14px}
@@ -232,7 +232,7 @@ const Styles = () => (
     /* ---------- LOGO + HERO CENTRALIZADO ---------- */
     .brand-logo{height:44px;width:auto;display:block}
     .hero{align-items:center;text-align:center}
-    .hero h1{font-size:clamp(22px,5.2vw,56px);white-space:nowrap;margin:18px 0 0}
+    .hero h1{font-size:clamp(24px,5.4vw,64px);white-space:nowrap;margin:18px 0 0}
     .hero .lead{margin-left:auto;margin-right:auto}
     .hero .cta-row{justify-content:center}
     .hero .verse{border-left:0;padding-left:0;text-align:center;margin-left:auto;margin-right:auto;max-width:none}
@@ -247,7 +247,7 @@ const Styles = () => (
     .socials a{display:grid;place-items:center;color:var(--paper);transition:color .2s,transform .2s}
     .socials a svg{width:26px;height:26px}
     .socials a:hover{color:var(--gold);transform:translateY(-2px)}
-    .copy{background:#0a0a0a;color:var(--gray);font-size:12px;text-align:center;
+    .copy{background:#0a0a0a;color:var(--gray);font-size:13px;text-align:center;
       padding:16px;letter-spacing:.3px;border-top:1px solid rgba(255,255,255,.05)}
 
     /* ---------- RESPONSIVO ---------- */
@@ -274,16 +274,16 @@ const Styles = () => (
     }
     /* ---------- CABEÇALHO DE PÁGINA ---------- */
     .page-head{padding:48px 0 4px;text-align:center}
-    .page-head h2{font-size:clamp(36px,6vw,58px);margin-top:14px}
-    .page-head .lead{color:var(--dim);max-width:580px;margin:14px auto 0;font-size:15px;line-height:1.65}
+    .page-head h2{font-size:clamp(40px,6vw,66px);margin-top:14px}
+    .page-head .lead{color:var(--dim);max-width:580px;margin:14px auto 0;font-size:16px;line-height:1.65}
     .page-head .verse{border-left:0;padding-left:0;text-align:center;margin-left:auto;margin-right:auto}
 
     /* ---------- ABAS ---------- */
     .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:28px 0 24px}
     .tabs::-webkit-scrollbar{display:none}
     .tabs button{flex:none;background:rgba(255,255,255,.03);border:1px solid var(--line);
-      color:var(--dim);font-family:var(--sans);font-size:13px;letter-spacing:.4px;
-      padding:10px 18px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:all .2s}
+      color:var(--dim);font-family:var(--sans);font-size:14px;letter-spacing:.4px;
+      padding:11px 19px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:all .2s}
     .tabs button:hover{color:var(--paper)}
     .tabs button.on{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:500}
     /* selo "Em curso" na aba do estudo em andamento */
@@ -304,8 +304,8 @@ const Styles = () => (
     .scard .badge svg{width:12px;height:12px}
     .scard-body{padding:22px;display:flex;flex-direction:column;flex:1}
     .scard-body .num{font-size:11px;letter-spacing:1.5px;font-weight:600;color:var(--gold);text-transform:uppercase}
-    .scard-body h4{font-family:var(--serif);font-size:21px;font-weight:500;margin:8px 0 6px;line-height:1.15}
-    .scard-body p{font-size:13px;color:var(--dim);line-height:1.55;flex:1}
+    .scard-body h4{font-family:var(--serif);font-size:23px;font-weight:500;margin:8px 0 6px;line-height:1.15}
+    .scard-body p{font-size:14px;color:var(--dim);line-height:1.55;flex:1}
     .dl{margin-top:18px;align-self:flex-start}
     /* linha do número da aula + link de download do PDF (alinhados à esquerda) */
     .num-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
@@ -412,7 +412,7 @@ const Styles = () => (
       border-radius:50%;background:var(--gold)}
     .meta{border:1px solid var(--line);border-radius:16px;padding:22px;height:fit-content;
       background:rgba(255,255,255,.03);display:flex;flex-direction:column;gap:16px}
-    .meta .row{display:flex;gap:12px;align-items:flex-start;font-size:14px}
+    .meta .row{display:flex;gap:12px;align-items:flex-start;font-size:15px}
     .meta .row svg{width:18px;height:18px;color:var(--gold);flex:none;margin-top:2px}
     .meta .row small{display:block;font-size:10px;letter-spacing:2px;color:var(--gold);
       text-transform:uppercase;margin-bottom:4px}
@@ -443,8 +443,8 @@ const Styles = () => (
       border-bottom:1px solid rgba(255,255,255,.06)}
     .brow:last-child{border-bottom:0}
     .brow .k{color:var(--dim);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
-    .brow .v{color:var(--paper);text-align:right;font-weight:500;font-size:15px}
-    .doe-note{text-align:center;color:var(--dim);font-size:14px;max-width:560px;
+    .brow .v{color:var(--paper);text-align:right;font-weight:500;font-size:16px}
+    .doe-note{text-align:center;color:var(--dim);font-size:15px;max-width:560px;
       margin:34px auto 0;line-height:1.75}
     @media(max-width:860px){.doe-grid{grid-template-columns:1fr}}
 
@@ -454,7 +454,7 @@ const Styles = () => (
     .field label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;
       color:var(--gold);margin-bottom:8px}
     .field input,.field textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--line);
-      border-radius:12px;padding:13px 15px;color:var(--paper);font-family:var(--sans);font-size:15px;
+      border-radius:12px;padding:13px 15px;color:var(--paper);font-family:var(--sans);font-size:16px;
       outline:none;transition:border-color .2s}
     .field input::placeholder,.field textarea::placeholder{color:rgba(246,245,241,.32)}
     .field input:focus,.field textarea:focus{border-color:var(--gold)}
@@ -470,7 +470,7 @@ const Styles = () => (
     .irow svg{width:20px;height:20px;color:var(--gold);flex:none;margin-top:2px}
     .irow small{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;
       color:var(--gold);margin-bottom:5px}
-    .irow a,.irow span{color:var(--paper);font-size:15px;text-decoration:none}
+    .irow a,.irow span{color:var(--paper);font-size:16px;text-decoration:none}
     .irow a:hover{color:var(--gold)}
     .info-socials{display:flex;gap:11px;margin-top:22px}
 
