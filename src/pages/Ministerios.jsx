@@ -21,7 +21,7 @@ export default function Ministerios({ go }) {
         <div className="head">
           <div className="mi"><Icon strokeWidth={1.4} /></div>
           <div>
-            <div className="sub">{current.bonus ? "Grupo de homens" : "Ministério"}</div>
+            <div className="sub">{current.bonus ? "Grupo" : "Ministério"}</div>
             <h2>{current.name}</h2>
           </div>
         </div>
