@@ -114,7 +114,7 @@ const Styles = () => (
       letter-spacing:2px;color:var(--gold);margin-top:8px}
     .hero .verse{font-size:clamp(20px,2.6vw,25px)}
     .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-    .btn{display:inline-flex;align-items:center;gap:9px;font-size:16px;font-weight:500;
+    .btn{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:500;
       padding:13px 22px;border-radius:999px;cursor:pointer;border:1px solid transparent;
       transition:transform .15s,background .2s,color .2s;text-decoration:none}
     .btn:hover{transform:translateY(-2px)}
@@ -163,7 +163,7 @@ const Styles = () => (
 
     /* link dourado "ver a programação do mês" */
     .month-link{margin-top:16px;display:inline-flex;align-items:center;gap:7px;background:none;border:0;
-      color:var(--gold);font-family:var(--sans);font-size:13px;letter-spacing:.5px;cursor:pointer;
+      color:var(--gold);font-family:var(--sans);font-size:16px;letter-spacing:.5px;cursor:pointer;
       padding:4px 0;transition:gap .2s,color .2s}
     .month-link svg{width:15px;height:15px}
     .month-link:hover{color:var(--gold-hi);gap:11px}
@@ -191,7 +191,7 @@ const Styles = () => (
       height:230px;background:var(--ink2)}
     .map-frame iframe{width:100%;height:100%;border:0;
       filter:invert(0.92) hue-rotate(180deg) saturate(0.7) brightness(0.9) contrast(0.95)}
-    .addr{display:flex;align-items:flex-start;gap:9px;margin-top:16px;font-size:14px;color:var(--dim)}
+    .addr{display:flex;align-items:flex-start;gap:9px;margin-top:16px;font-size:16px;color:var(--dim)}
     .addr svg{width:18px;height:18px;color:var(--gold);flex:none;margin-top:1px}
     .map-link{margin-top:14px}
 
@@ -240,8 +240,8 @@ const Styles = () => (
     .footer{position:relative;z-index:10;border-top:1px solid var(--line);margin-top:30px}
     .footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
       gap:22px;padding:34px clamp(16px,4vw,40px)}
-    .footer-brand b{font-family:var(--serif);font-size:24px;font-weight:600}
-    .footer-brand p{font-size:13px;color:var(--dim);margin-top:6px;max-width:300px}
+    .footer-brand b{font-family:var(--serif);font-size:28px;font-weight:600}
+    .footer-brand p{font-size:16px;color:var(--dim);margin-top:6px;max-width:420px;line-height:1.6}
     .socials{display:flex;gap:18px;align-items:center}
     .socials a{display:grid;place-items:center;color:var(--paper);transition:color .2s,transform .2s}
     .socials a svg{width:26px;height:26px}
@@ -443,7 +443,7 @@ const Styles = () => (
     .brow:last-child{border-bottom:0}
     .brow .k{color:var(--dim);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
     .brow .v{color:var(--paper);text-align:right;font-weight:500;font-size:17px}
-    .doe-note{text-align:center;color:var(--dim);font-size:16px;max-width:560px;
+    .doe-note{text-align:center;color:var(--dim);font-size:16px;max-width:580px;
       margin:34px auto 0;line-height:1.75}
     @media(max-width:860px){.doe-grid{grid-template-columns:1fr}}
 

@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer-top">
         <div className="footer-brand">
           <b>{CHURCH.name}</b>
-          <p>Um lugar para pertencer, crescer e servir. Você é bem-vindo todas as semanas.</p>
+          <p>Um lugar para pertencer, crescer e servir. <br />Faça parte desta família de fé.</p>
         </div>
         <div className="socials">
           {SOCIALS.map(({ id, label, Icon, url }) => (

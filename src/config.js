@@ -138,7 +138,7 @@ export const PDF_BASE = "/estudos";
 
 export const STUDIES = {
   intro:
-    "Materiais das classes da Escola Bíblica Dominical e dos cursos de capacitação. Baixe os PDFs, assista às aulas e aprofunde sua fé durante a semana.",
+    "Materiais das classes da Escola Bíblica Dominical e dos cursos de capacitação. Baixe os PDFs, assista às aulas e aprofunde sua fé.",
   current: "cristologia", // qual estudo abre por padrão (id da aba em andamento)
   tabs: [
     {

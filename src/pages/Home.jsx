@@ -44,10 +44,10 @@ export default function Home({ go }) {
         <span className="eyebrow">Bem-vindo à</span>
         <h1>{CHURCH.shortName}</h1>
         <p className="lead">
-          Mais do que uma igreja, uma família que caminha junto.<br />
-          Venha adorar, ouvir a Palavra e encontrar acolhimento.<br />
-          Participe conosco!
-        </p>
+  Não apenas uma Igreja, mas uma Família!
+  <br />
+  Participe conosco!
+</p>
         <blockquote className="verse">
           “{CHURCH.verse.text}”
           <small>{CHURCH.verse.ref}</small>
