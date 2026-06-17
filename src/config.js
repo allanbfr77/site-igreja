@@ -33,8 +33,8 @@ export const CHURCH = {
   // Logo do topo (coloque o arquivo em public/, ex: /logo.png). Vazio = mostra o nome em texto.
   logo: "/logo.png",
   // Fundo. Use UM dos dois: vídeo (.mp4/.webm) OU imagem. Vazio = fundo de exemplo.
-  backgroundVideo: "/cruz.mp4",
-  backgroundImage: "",
+  //backgroundVideo: "/cruz.mp4",
+  backgroundImage: "image.png",
   verse: {
     text: "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei.",
     ref: "Mateus 11:28",

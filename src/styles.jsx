@@ -9,7 +9,7 @@ const Styles = () => (
       --ink:#0B0B0C; --ink2:#161618; --glass:rgba(20,20,22,.55);
       --paper:#F6F5F1; --dim:rgba(246,245,241,.62);
       --gold:#E6B23E; --gold-hi:#F6D27A; --line:rgba(230,178,62,.26);
-      --gray:#8A8A8A; --hdr:68px; --bar:66px;
+      --gray:#8A8A8A; --hdr:76px; --bar:66px;
       --serif:'Cormorant Garamond',Georgia,serif;
       --sans:'Inter',system-ui,sans-serif;
     }
@@ -19,24 +19,21 @@ const Styles = () => (
 
     /* ---------- FUNDO ANIMADO (Ken Burns + luz) ---------- */
     .bg{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--ink)}
-    .bg-img{position:absolute;inset:-8%;background-size:cover;background-position:center;
-      animation:kenburns 34s ease-in-out infinite alternate}
+    .bg-img{position:absolute;inset:0;background-size:cover;background-position:center;
+      background-repeat:no-repeat;filter:saturate(.6) contrast(1.1) brightness(.9)}
     .bg-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4}
     .bg-fallback{background:
       radial-gradient(120% 75% at 50% 14%, rgba(230,178,62,.16), transparent 56%),
       radial-gradient(100% 90% at 50% 0%, #1b1813, #0b0b0c 62%)}
-    .bg-glow{position:absolute;inset:0;background:
-      radial-gradient(60% 45% at 50% 22%, rgba(246,210,122,.20), transparent 70%);
-      animation:breathe 9s ease-in-out infinite;mix-blend-mode:screen}
+    .bg-glow{display:none}
     /* overlay LEVE — só uma base, mais forte nas pontas */
     .bg-veil{position:absolute;inset:0;background:linear-gradient(
-      180deg, rgba(11,11,12,.62) 0%, rgba(11,11,12,.22) 34%,
-      rgba(11,11,12,.30) 64%, rgba(11,11,12,.78) 100%)}
-    .bg-grain{position:absolute;inset:0;opacity:.05;background-image:
-      radial-gradient(rgba(255,255,255,.6) .5px, transparent .5px);background-size:3px 3px}
+      180deg, rgba(11,11,12,.74) 0%, rgba(11,11,12,.55) 38%,
+      rgba(11,11,12,.60) 68%, rgba(11,11,12,.88) 100%)}
+    .bg-grain{display:none}
     @keyframes kenburns{0%{transform:scale(1.06) translate(0,0)}
       100%{transform:scale(1.18) translate(-2%,-2%)}}
-    @keyframes breathe{0%,100%{opacity:.35}50%{opacity:.7}}
+    @keyframes breathe{0%,100%{opacity:.18}50%{opacity:.34}}
 
     /* ---------- HEADER (transparente + blur) ---------- */
     .hdr{position:fixed;top:0;left:0;right:0;height:var(--hdr);z-index:40;
@@ -109,7 +106,7 @@ const Styles = () => (
       justify-content:center;padding:60px 0 48px}
     .hero h1{font-size:clamp(44px,8vw,92px);margin:18px 0 0}
     .hero h1 em{font-style:italic;color:var(--gold-hi)}
-    .hero .lead{font-size:clamp(18px,2.3vw,22px);color:var(--dim);max-width:560px;
+    .hero .lead{font-size:clamp(18px,2.3vw,22px);color:var(--dim);max-width:760px;
       margin-top:20px;line-height:1.6}
     .verse{margin-top:26px;padding-left:18px;border-left:2px solid var(--gold);
       font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.6vw,25px);max-width:540px}
@@ -232,7 +229,7 @@ const Styles = () => (
     }
 
     /* ---------- LOGO + HERO CENTRALIZADO ---------- */
-    .brand-logo{height:44px;width:auto;display:block}
+    .brand-logo{height:62px;width:auto;display:block}
     .hero{align-items:center;text-align:center}
     .hero h1{font-size:clamp(26px,6vw,72px);white-space:nowrap;margin:18px 0 0}
     .hero .lead{margin-left:auto;margin-right:auto}
@@ -278,7 +275,7 @@ const Styles = () => (
     .page-head{padding:48px 0 4px;text-align:center}
     .page-head h2{font-size:clamp(44px,6.5vw,73px);margin-top:14px}
     .page-head .lead{color:var(--dim);max-width:580px;margin:14px auto 0;font-size:18px;line-height:1.65}
-    .page-head .verse{border-left:0;padding-left:0;text-align:center;margin-left:auto;margin-right:auto}
+    .page-head .verse{border-left:0;padding-left:0;text-align:center;margin-left:auto;margin-right:auto;max-width:720px}
 
     /* ---------- ABAS ---------- */
     .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:28px 0 24px}
