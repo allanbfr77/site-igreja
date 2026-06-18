@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { CHURCH } from "./config.js";
+import { pathFor, pageFromPath } from "./routes.js";
 import Styles from "./styles.jsx";
 import Background from "./components/Background.jsx";
 import Header from "./components/Header.jsx";
@@ -14,17 +15,7 @@ import Doe from "./pages/Doe.jsx";
 import Cultos from "./pages/Cultos.jsx";
 import Contato from "./pages/Contato.jsx";
 
-/* ------------------------------------------------------------
-   ROTAS — cada página vira uma URL limpa (History API).
-   "inicio" = "/", as demais = "/<id>". Sincroniza o estado com
-   a barra de endereços e com o botão voltar/avançar do navegador.
-   ------------------------------------------------------------ */
-const PAGES = ["inicio", "estudos", "ministerios", "doe", "cultos", "contato"];
-const pathFor = (id) => (id === "inicio" ? "/" : `/${id}`);
-const pageFromPath = (p) => {
-  const seg = (p || "/").replace(/^\/+|\/+$/g, "").toLowerCase();
-  return PAGES.includes(seg) ? seg : "inicio";
-};
+/* Título da aba conforme a página atual (bom p/ favoritos e compartilhamento) */
 const TITLES = {
   inicio: CHURCH.name,
   estudos: `Estudos · ${CHURCH.name}`,

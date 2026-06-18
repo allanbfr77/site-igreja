@@ -42,18 +42,18 @@ const Styles = () => (
       background:linear-gradient(180deg,rgba(11,11,12,.55),rgba(11,11,12,.12));
       backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line)}
-    .brand{display:flex;align-items:center;gap:11px;cursor:pointer;background:none;border:0;color:inherit}
+    .brand{display:flex;align-items:center;gap:11px;cursor:pointer;background:none;border:0;color:inherit;text-decoration:none}
     .brand .mark{width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;
       display:grid;place-items:center;color:var(--gold);flex:none}
     .brand .mark svg{width:18px;height:18px}
     .brand b{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.3px;line-height:1}
     .brand span{display:block;font-size:9.5px;letter-spacing:3px;color:var(--gold);margin-top:2px}
     .hdr-nav{display:flex;gap:4px}
-    .hdr-nav button{background:none;border:0;color:var(--dim);font-family:var(--sans);
+    .hdr-nav a{background:none;border:0;color:var(--dim);font-family:var(--sans);
       font-size:15px;letter-spacing:.4px;padding:8px 15px;border-radius:999px;cursor:pointer;
-      transition:color .2s,background .2s}
-    .hdr-nav button:hover{color:var(--paper)}
-    .hdr-nav button.on{color:var(--ink);background:var(--gold);font-weight:500}
+      text-decoration:none;transition:color .2s,background .2s}
+    .hdr-nav a:hover{color:var(--paper)}
+    .hdr-nav a.on{color:var(--ink);background:var(--gold);font-weight:500}
 
     /* ---------- MENU HAMBÚRGUER (mobile) ---------- */
     .hdr-burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;
@@ -65,13 +65,13 @@ const Styles = () => (
       background:rgba(11,11,12,.5);backdrop-filter:blur(16px) saturate(1.1);-webkit-backdrop-filter:blur(16px) saturate(1.1);
       border-bottom:1px solid var(--line);display:flex;flex-direction:column;padding:8px;
       animation:drawerIn .25s ease both}
-    .hdr-drawer button{display:flex;align-items:center;gap:12px;background:none;border:0;
+    .hdr-drawer a{display:flex;align-items:center;gap:12px;background:none;border:0;
       color:var(--dim);font-family:var(--sans);font-size:15px;letter-spacing:.3px;text-align:left;
-      padding:14px 16px;border-radius:12px;cursor:pointer;transition:background .2s,color .2s}
-    .hdr-drawer button svg{width:19px;height:19px;color:var(--gold)}
-    .hdr-drawer button:hover{color:var(--paper);background:rgba(255,255,255,.04)}
-    .hdr-drawer button.on{color:var(--ink);background:var(--gold);font-weight:500}
-    .hdr-drawer button.on svg{color:var(--ink)}
+      padding:14px 16px;border-radius:12px;cursor:pointer;text-decoration:none;transition:background .2s,color .2s}
+    .hdr-drawer a svg{width:19px;height:19px;color:var(--gold)}
+    .hdr-drawer a:hover{color:var(--paper);background:rgba(255,255,255,.04)}
+    .hdr-drawer a.on{color:var(--ink);background:var(--gold);font-weight:500}
+    .hdr-drawer a.on svg{color:var(--ink)}
     @keyframes drawerIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
     /* camada para fechar o menu ao clicar fora */
     .hdr-overlay{position:fixed;inset:0;z-index:38;border:0;cursor:default;
@@ -84,12 +84,12 @@ const Styles = () => (
       display:flex;align-items:stretch;justify-content:space-around;
       background:rgba(11,11,12,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
       border-top:1px solid var(--line)}
-    .bar button{flex:1;background:none;border:0;color:var(--dim);cursor:pointer;
+    .bar a{flex:1;background:none;border:0;color:var(--dim);cursor:pointer;
       display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
-      font-size:11px;letter-spacing:.3px;transition:color .2s;position:relative}
-    .bar button svg{width:21px;height:21px}
-    .bar button.on{color:var(--gold)}
-    .bar button.on::before{content:"";position:absolute;top:0;width:26px;height:2px;
+      font-size:11px;letter-spacing:.3px;text-decoration:none;transition:color .2s;position:relative}
+    .bar a svg{width:21px;height:21px}
+    .bar a.on{color:var(--gold)}
+    .bar a.on::before{content:"";position:absolute;top:0;width:26px;height:2px;
       background:var(--gold);border-radius:2px}
 
     /* ---------- LAYOUT BASE ---------- */
@@ -268,8 +268,8 @@ const Styles = () => (
       .ed-loc .addr{justify-content:center}
     }
     @media(max-width:520px){
-      .bar button span{display:none}
-      .bar button svg{width:23px;height:23px}
+      .bar a span{display:none}
+      .bar a svg{width:23px;height:23px}
       .hero h1{white-space:normal}
       .card{padding:20px}
       .footer-top{flex-direction:column;align-items:center;text-align:center}
@@ -544,11 +544,11 @@ const Styles = () => (
       transform:skewX(-18deg);transition:left .6s ease;pointer-events:none}
     .btn-gold:hover::after{left:150%}
 
-    .hdr-nav button{position:relative}
-    .hdr-nav button::after{content:"";position:absolute;left:13px;right:13px;bottom:5px;height:1.5px;
+    .hdr-nav a{position:relative}
+    .hdr-nav a::after{content:"";position:absolute;left:13px;right:13px;bottom:5px;height:1.5px;
       background:var(--gold);border-radius:2px;transform:scaleX(0);transform-origin:center;transition:transform .25s ease}
-    .hdr-nav button:hover::after{transform:scaleX(1)}
-    .hdr-nav button.on::after{display:none}
+    .hdr-nav a:hover::after{transform:scaleX(1)}
+    .hdr-nav a.on::after{display:none}
 
     /* ---------- HEADER AO ROLAR ---------- */
     .hdr{transition:background .3s ease, border-color .3s ease}

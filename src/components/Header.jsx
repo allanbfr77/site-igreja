@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { CHURCH, NAV } from "../config.js";
+import { pathFor, isModifiedClick } from "../routes.js";
 import { CrossMark } from "./icons.jsx";
 
 /* Header fixo transparente (fica sólido ao rolar) com logo, navegação
@@ -10,11 +11,17 @@ import { CrossMark } from "./icons.jsx";
 export default function Header({ page, go, scrolled }) {
   const [open, setOpen] = useState(false);
   const navigate = (id) => { setOpen(false); go(id); };
+  /* Clique normal → navega via roteador; ctrl/cmd/clique do meio → abre nova aba */
+  const onNav = (e, id) => {
+    if (isModifiedClick(e)) return;
+    e.preventDefault();
+    navigate(id);
+  };
 
   return (
     <>
       <header className={`hdr ${scrolled ? "scrolled" : ""} ${open ? "menu-open" : ""}`}>
-        <button className="brand" onClick={() => navigate("inicio")}>
+        <a className="brand" href={pathFor("inicio")} onClick={(e) => onNav(e, "inicio")}>
           {CHURCH.logo ? (
             <img className="brand-logo" src={CHURCH.logo} alt={CHURCH.name} />
           ) : (
@@ -26,13 +33,13 @@ export default function Header({ page, go, scrolled }) {
               </span>
             </>
           )}
-        </button>
+        </a>
 
         <nav className="hdr-nav">
           {NAV.map((n) => (
-            <button key={n.id} className={page === n.id ? "on" : ""} onClick={() => navigate(n.id)}>
+            <a key={n.id} className={page === n.id ? "on" : ""} href={pathFor(n.id)} onClick={(e) => onNav(e, n.id)}>
               {n.label}
-            </button>
+            </a>
           ))}
         </nav>
 
@@ -51,9 +58,9 @@ export default function Header({ page, go, scrolled }) {
           <button className="hdr-overlay" aria-label="Fechar menu" onClick={() => setOpen(false)} />
           <div className="hdr-drawer">
             {NAV.map(({ id, label, Icon }) => (
-              <button key={id} className={page === id ? "on" : ""} onClick={() => navigate(id)}>
+              <a key={id} className={page === id ? "on" : ""} href={pathFor(id)} onClick={(e) => onNav(e, id)}>
                 <Icon strokeWidth={1.6} /> {label}
-              </button>
+              </a>
             ))}
           </div>
         </>
