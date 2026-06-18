@@ -2,7 +2,6 @@ import { useState, useMemo } from "react";
 import { ArrowRight, ArrowLeft, Clock, MapPin } from "lucide-react";
 import { CHURCH, MONTH_SCHEDULE } from "../config.js";
 import Footer from "../components/Footer.jsx";
-import LiveBanner from "../components/LiveBanner.jsx";
 import CountUp from "../components/CountUp.jsx";
 
 /* Hora atual no fuso de Brasília (independe do fuso do visitante) */
@@ -62,7 +61,6 @@ export default function Home({ go }) {
   };
   return (
     <div className="wrap">
-      <LiveBanner />
       {/* HERO */}
       <section className="hero">
         <span className="eyebrow">Bem-vindo à</span>

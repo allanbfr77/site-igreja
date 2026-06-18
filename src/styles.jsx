@@ -299,7 +299,8 @@ const Styles = () => (
       font-size:8.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
       padding:3px 8px;border-radius:999px;background:var(--ink);color:var(--gold);border:1px solid var(--line)}
     .tabs button .tab-now::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);
-      animation:liveDot 1.6s ease-out infinite}
+      animation:pulseDot 1.6s ease-out infinite}
+    @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(226,178,62,.6)}100%{box-shadow:0 0 0 12px rgba(226,178,62,0)}}
 
     /* ---------- GRADE DE ESTUDOS ---------- */
     .study-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-bottom:24px}
@@ -487,6 +488,14 @@ const Styles = () => (
       background:rgba(230,178,62,.06);font-size:14px;color:var(--dim);line-height:1.6;
       display:flex;gap:12px;align-items:flex-start}
     .yt-note svg{width:18px;height:18px;color:var(--gold);flex:none;margin-top:1px}
+    .next-live{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:26px;
+      border:1px solid var(--line);border-radius:14px;padding:16px 20px;text-align:center;
+      background:rgba(230,178,62,.06);color:var(--paper);font-size:16px;line-height:1.5;
+      text-decoration:none;transition:background .2s,border-color .2s}
+    .next-live:hover{background:rgba(230,178,62,.12);border-color:var(--gold)}
+    .next-live svg{width:22px;height:22px;color:var(--gold);flex:none}
+    .next-live b{color:var(--gold);font-weight:600}
+    .next-live u{color:var(--gold-hi);text-underline-offset:3px}
     .skel{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--glass)}
     .skel .sh{aspect-ratio:16/9;background:linear-gradient(90deg,
       rgba(255,255,255,.04),rgba(255,255,255,.10),rgba(255,255,255,.04));
@@ -560,23 +569,6 @@ const Styles = () => (
     .to-top:hover{transform:translateY(-3px);background:var(--gold);color:var(--ink);border-color:var(--gold)}
     .to-top svg{width:15px;height:15px}
 
-    /* ---------- AO VIVO ---------- */
-    .live-banner{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:8px 0 -8px;
-      border:1px solid var(--line);border-radius:14px;padding:14px 18px;
-      background:linear-gradient(120deg, rgba(220,40,40,.16), rgba(20,20,22,.5));
-      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-    .live-banner b{font-family:var(--serif);font-size:18px;font-weight:500;flex:1}
-    .live-dot{width:11px;height:11px;border-radius:50%;background:#e23b3b;flex:none;
-      animation:liveDot 1.6s ease-out infinite}
-    @keyframes liveDot{0%{box-shadow:0 0 0 0 rgba(226,59,59,.6)}100%{box-shadow:0 0 0 12px rgba(226,59,59,0)}}
-    .live-modal{position:fixed;inset:0;z-index:120;background:rgba(0,0,0,.82);display:grid;place-items:center;padding:20px}
-    .live-inner{position:relative;width:min(900px,100%);aspect-ratio:16/9;background:#000;border-radius:14px;
-      overflow:hidden;border:1px solid var(--line)}
-    .live-inner iframe{width:100%;height:100%;border:0}
-    .live-close{position:absolute;top:-12px;right:-12px;z-index:2;width:38px;height:38px;border-radius:50%;
-      background:var(--gold);color:var(--ink);border:0;font-size:22px;line-height:1;cursor:pointer}
-    @media(max-width:560px){.live-close{top:6px;right:6px}}
-
     @media(prefers-reduced-motion:reduce){
       .bg-img,.bg-glow{animation:none}
       .btn:hover,.socials a:hover{transform:none}
@@ -584,7 +576,7 @@ const Styles = () => (
       .hero > *,.page-anim{animation:none}
       .tile:hover .tile-bg{transform:none}
       .btn-gold:hover::after{left:-130%}
-      .wa-fab,.live-dot,.tabs button .tab-now::before,.hdr-drawer,.hdr-overlay{animation:none}
+      .wa-fab,.tabs button .tab-now::before,.hdr-drawer,.hdr-overlay{animation:none}
     }
   `}</style>
 );

@@ -403,13 +403,10 @@ export const CONTACT = {
 };
 
 /* ------------------------------------------------------------
-   YOUTUBE / AO VIVO
+   YOUTUBE
    Configure a chave da YouTube Data API e o ID do canal.
    Sem configuração (ou em caso de erro), mostra os exemplos de fallback.
-   Para testar o banner ao vivo manualmente, ponha um ID em LIVE.forceVideoId.
    ------------------------------------------------------------ */
-export const LIVE = { forceVideoId: "" };
-
 export const YOUTUBE = {
   // (Opcional) URL de um videos.json pronto. Vazio = usa a YouTube API direto (precisa de apiKey).
   videosUrl: "",

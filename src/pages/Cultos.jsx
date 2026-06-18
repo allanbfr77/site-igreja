@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Play, Info } from "lucide-react";
+import { useState, useEffect, useMemo } from "react";
+import { Play, Info, Calendar } from "lucide-react";
 import { YOUTUBE } from "../config.js";
 import Footer from "../components/Footer.jsx";
 
@@ -7,6 +7,29 @@ import Footer from "../components/Footer.jsx";
 const Note = ({ children }) => (
   <div className="yt-note"><Info /><span>{children}</span></div>
 );
+
+/* Cultos ao vivo fixos (w = dia: 0=DOM, 3=QUA). Horário de Brasília. */
+const LIVE_SERVICES = [
+  { w: 3, h: 19, m: 30, day: "quarta-feira" },
+  { w: 0, h: 10, m: 0, day: "domingo" },
+  { w: 0, h: 19, m: 0, day: "domingo" },
+];
+
+/* Hora atual no fuso de Brasília (independe do fuso do visitante) */
+const nowSP = () => new Date(new Date().toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }));
+const fmtTime = (h, m) => (m ? `${h}h${String(m).padStart(2, "0")}` : `${h}h`);
+
+/* Próximo culto ao vivo a partir de agora (Brasília) */
+function nextLive() {
+  const n = nowSP();
+  const nowMin = n.getDay() * 1440 + n.getHours() * 60 + n.getMinutes();
+  let best = Infinity, res = LIVE_SERVICES[0];
+  LIVE_SERVICES.forEach((s) => {
+    const delta = (s.w * 1440 + s.h * 60 + s.m - nowMin + 10080) % 10080;
+    if (delta < best) { best = delta; res = s; }
+  });
+  return res;
+}
 
 /* Card de culto (abre o YouTube embutido ao clicar) */
 function CultoCard({ v }) {
@@ -41,6 +64,8 @@ function CultoCard({ v }) {
 /* Página Cultos — 3 últimos vídeos do canal pela tag (YouTube API) + fallback */
 export default function Cultos() {
   const [state, setState] = useState({ loading: true, videos: [], note: "" });
+  const live = useMemo(() => nextLive(), []);
+  const liveUrl = `https://www.youtube.com/channel/${YOUTUBE.channelId}/live`;
 
   useEffect(() => {
     let alive = true;
@@ -124,6 +149,14 @@ export default function Cultos() {
           ? [0, 1, 2].map((i) => <div className="skel" key={i}><div className="sh" /><div className="sb" /></div>)
           : state.videos.map((v, i) => <CultoCard key={i} v={v} />)}
       </div>
+
+      <a className="next-live reveal" href={liveUrl} target="_blank" rel="noreferrer">
+        <Calendar />
+        <span>
+          <b>Próximo culto:</b> {live.day}, {fmtTime(live.h, live.m)}.{" "}
+          <u>Clique aqui para assistir</u>
+        </span>
+      </a>
 
       <Footer />
     </div>
