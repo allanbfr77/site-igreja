@@ -266,6 +266,10 @@ const Styles = () => (
       .ed-cal .prog-col,.ed-loc .map-frame{width:100%}
       .ed-cal .prog-col{text-align:left}
       .ed-cal .week-range,.ed-cal .week-hint{text-align:center}
+      /* semana sem eventos: card com altura parecida à da agenda semanal */
+      .ed-cal .week-hint{display:grid;place-items:center;min-height:200px;margin-top:14px;
+        padding:24px;border:1px solid rgba(255,255,255,.06);border-radius:12px;
+        background:rgba(255,255,255,.03)}
       .ed-loc .addr{justify-content:center}
     }
     @media(max-width:520px){
