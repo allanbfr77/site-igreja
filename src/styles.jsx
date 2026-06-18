@@ -265,6 +265,7 @@ const Styles = () => (
       .ed-cal .week-badges{justify-content:center}
       .ed-cal .prog-col,.ed-loc .map-frame{width:100%}
       .ed-cal .prog-col{text-align:left}
+      .ed-cal .week-range,.ed-cal .week-hint{text-align:center}
       .ed-loc .addr{justify-content:center}
     }
     @media(max-width:520px){
@@ -495,7 +496,7 @@ const Styles = () => (
     .next-live:hover{background:rgba(230,178,62,.12);border-color:var(--gold)}
     .next-live svg{width:22px;height:22px;color:var(--gold);flex:none}
     .next-live b{color:var(--gold);font-weight:600}
-    .next-live u{color:var(--gold-hi);text-underline-offset:3px}
+    .next-live u{color:var(--gold-hi);text-underline-offset:3px;white-space:nowrap}
     .skel{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--glass)}
     .skel .sh{aspect-ratio:16/9;background:linear-gradient(90deg,
       rgba(255,255,255,.04),rgba(255,255,255,.10),rgba(255,255,255,.04));
