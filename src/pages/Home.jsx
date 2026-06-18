@@ -26,6 +26,27 @@ function nextSlot(schedule) {
   return res;
 }
 
+/* Meses em português → índice (0 = janeiro) para ler MONTH_SCHEDULE.label */
+const PT_MONTHS = ["janeiro","fevereiro","março","abril","maio","junho",
+  "julho","agosto","setembro","outubro","novembro","dezembro"];
+
+/* Índice da semana vigente dentro de MONTH_SCHEDULE (Brasília).
+   Retorna -1 se hoje estiver fora do mês/ano do calendário. */
+function currentWeekIndex(month) {
+  const lbl = (month.label || "").toLowerCase();
+  const mIdx = PT_MONTHS.findIndex((m) => lbl.includes(m));
+  const yMatch = lbl.match(/\d{4}/);
+  if (mIdx < 0 || !yMatch) return -1;
+  const n = nowSP();
+  if (n.getMonth() !== mIdx || n.getFullYear() !== Number(yMatch[0])) return -1;
+  const today = n.getDate();
+  return month.weeks.findIndex((w) => {
+    const r = (w.range || "").match(/(\d+)\s*a\s*(\d+)/);
+    if (!r) return false;
+    return today >= Number(r[1]) && today <= Number(r[2]);
+  });
+}
+
 /* Página Início — hero centralizado + blocos editoriais (scroll-snap) */
 export default function Home({ go }) {
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(CHURCH.address)}&output=embed`;
@@ -34,7 +55,10 @@ export default function Home({ go }) {
   const next = useMemo(() => nextSlot(CHURCH.schedule), []);
   const openMonth = () => {
     setShowMonth(true);
-    setSelectedWeek(MONTH_SCHEDULE.weeks.findIndex((w) => w.events.length > 0));
+    const cur = currentWeekIndex(MONTH_SCHEDULE);
+    setSelectedWeek(
+      cur >= 0 ? cur : MONTH_SCHEDULE.weeks.findIndex((w) => w.events.length > 0)
+    );
   };
   return (
     <div className="wrap">
