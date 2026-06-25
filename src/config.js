@@ -28,19 +28,19 @@ import { IgIcon, FbIcon, YtIcon, WaIcon } from "./components/icons.jsx";
    IGREJA — nome, logo, fundo, versículo, endereço e horários
    ------------------------------------------------------------ */
 export const CHURCH = {
-  name: "Igreja Nova Vida de Botafogo",
-  shortName: "Igreja Nova Vida de Botafogo",
+  name: "Igreja Jesus Cristo",
+  shortName: "Igreja Jesus Cristo",
   // Logo do topo (coloque o arquivo em public/, ex: /logo.png). Vazio = mostra o nome em texto.
-  logo: "/logo.png",
+  logo: "/logo.svg",
   // Fundo. Use UM dos dois: vídeo (.mp4/.webm) OU imagem. Vazio = fundo de exemplo.
-  backgroundVideo: "",
-  backgroundImage: "fundo.png",
+  backgroundVideo: "cruz.mp4",
+  backgroundImage: "",
   verse: {
     text: "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei.",
     ref: "Mateus 11:28",
   },
-  founded: "2003",
-  address: "Rua da Matriz, 95 - Botafogo, Rio de Janeiro - RJ",
+  founded: "2010",
+  address: "Av. das Nações, 1500 - Centro, São Paulo - SP",
   // O selo "PRÓXIMO" é calculado automaticamente pelo horário de Brasília.
   // Cada item é um DIA (agrupa vários eventos no mesmo card).
   // w = dia da semana (0=DOM, 1=SEG, 2=TER, 3=QUA, 4=QUI, 5=SEX, 6=SÁB).
@@ -114,10 +114,10 @@ export const MONTH_SCHEDULE = {
    REDES SOCIAIS e NAVEGAÇÃO
    ------------------------------------------------------------ */
 export const SOCIALS = [
-  { id: "ig", label: "Instagram", Icon: IgIcon, url: "https://www.instagram.com/igrejanvb/" },
-  { id: "fb", label: "Facebook", Icon: FbIcon, url: "https://www.facebook.com/igrejanovavidadebotafogo" },
-  { id: "yt", label: "YouTube", Icon: YtIcon, url: "https://www.youtube.com/channel/UCLuWhw8fYakYDzM9SlNXVKg" },
-  { id: "wa", label: "WhatsApp", Icon: WaIcon, url: "https://wa.me/5521982982802" },
+  { id: "ig", label: "Instagram", Icon: IgIcon, url: "https://www.instagram.com/igrejajesuscristo/" },
+  { id: "fb", label: "Facebook", Icon: FbIcon, url: "https://www.facebook.com/igrejajesuscristo" },
+  { id: "yt", label: "YouTube", Icon: YtIcon, url: "https://www.youtube.com/@igrejajesuscristo" },
+  { id: "wa", label: "WhatsApp", Icon: WaIcon, url: "https://wa.me/5511999990000" },
 ];
 
 export const NAV = [
@@ -377,14 +377,14 @@ export const DONATE = {
     text: "Cada um contribua segundo propôs no seu coração, não com tristeza ou por necessidade; porque Deus ama ao que dá com alegria.",
     ref: "2 Coríntios 9:7",
   },
-  pixKey: "04.800.134/0001-48",
+  pixKey: "00.000.000/0001-00",
   bank: [
-    { k: "Banco", v: "BCO Santander (Brasil) S.A." },
-    { k: "Agência", v: "1053" },
-    { k: "Conta", v: "13000740-2" },
+    { k: "Banco", v: "Banco Exemplo S.A." },
+    { k: "Agência", v: "0001" },
+    { k: "Conta", v: "00000000-0" },
     { k: "Tipo", v: "Corrente" },
-    { k: "Favorecido", v: "Igreja de Nova Vida" },
-    { k: "CNPJ", v: "04.800.134/0001-48" },
+    { k: "Favorecido", v: "Igreja Jesus Cristo" },
+    { k: "CNPJ", v: "00.000.000/0001-00" },
   ],
 };
 
@@ -395,11 +395,11 @@ export const DONATE = {
    {{from_name}}, {{reply_to}} e {{message}}.
    ------------------------------------------------------------ */
 export const CONTACT = {
-  email: "invbotafogo.contato@gmail.com",
-  phone: "(21) 98298-2802",
-  whatsapp: "https://wa.me/5521982982802",
+  email: "contato@igrejajesuscristo.com.br",
+  phone: "(11) 99999-0000",
+  whatsapp: "https://wa.me/5511999990000",
   address: CHURCH.address,
-  emailjs: { serviceId: "service_o1vil8b", templateId: "template_dkpvz6d", publicKey: "-2KW2spheV2m60q7x" },
+  emailjs: { serviceId: "SEU_SERVICE_ID", templateId: "SEU_TEMPLATE_ID", publicKey: "SUA_PUBLIC_KEY" },
 };
 
 /* ------------------------------------------------------------
@@ -410,8 +410,8 @@ export const CONTACT = {
 export const YOUTUBE = {
   // (Opcional) URL de um videos.json pronto. Vazio = usa a YouTube API direto (precisa de apiKey).
   videosUrl: "",
-  apiKey: "AIzaSyAcUpzc7CbfbkjM7p2pD9WucHV5IzUvJr8", // restringir ao domínio após publicar
-  channelId: "UCLuWhw8fYakYDzM9SlNXVKg", // canal da igreja (já preenchido)
+  apiKey: "SUA_YOUTUBE_API_KEY", // restringir ao domínio após publicar
+  channelId: "SEU_CHANNEL_ID", // canal da igreja
   tag: "pregação",
   fallback: [
     { videoId: "", title: "Culto de Domingo — A graça que transforma", date: "" },

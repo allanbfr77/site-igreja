@@ -206,7 +206,7 @@ const Styles = () => (
     /* ---------- HOME EDITORIAL ---------- */
     .ed-home{margin-top:34px}
     .ed{display:grid;grid-template-columns:.42fr 1fr;gap:34px;align-items:center;
-      min-height:calc(100vh - var(--hdr));padding:60px 0;border-top:0}
+      padding:64px 0;border-top:0}
     .ed + .ed{border-top:1px solid var(--line)}
     .ed-home > .ed:first-child{border-top:1px solid var(--line)}
     /* cada seção "encaixa" ao rolar — só na home */
@@ -224,7 +224,7 @@ const Styles = () => (
     .bignum-lbl{font-size:12px;letter-spacing:3px;color:var(--dim);text-transform:uppercase;margin-top:4px}
     .ed-hist-title{font-size:35px;margin-bottom:14px;color:var(--gold);text-transform:uppercase;letter-spacing:1px}
     @media(max-width:860px){
-      .ed{grid-template-columns:1fr;gap:18px;padding:34px 0;min-height:calc(100vh - var(--hdr));align-items:start;align-content:start}
+      .ed{grid-template-columns:1fr;gap:18px;padding:40px 0;align-items:start;align-content:start}
       .ed-map{height:240px}
     }
 

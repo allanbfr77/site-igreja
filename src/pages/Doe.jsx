@@ -29,7 +29,7 @@ export default function Doe() {
           <p className="kicker">PIX</p>
           <h3>Contribua via PIX</h3>
           <div className="qr">
-            <img src="/qrcode_pix.png" alt="QR Code para doação via PIX" />
+            <img src="/qrcode_pix.svg" alt="QR Code para doação via PIX" />
           </div>
           <div className="pix-key">
             <div>

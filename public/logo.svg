@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 110" role="img" aria-label="Igreja Jesus Cristo — É o Senhor!">
+  <style>
+    .t1{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:600;
+        font-size:46px;letter-spacing:2px;fill:#F6F5F1}
+    .t2{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-weight:500;
+        font-style:italic;font-size:23px;letter-spacing:1px;fill:#E6B23E}
+  </style>
+  <text x="220" y="51" text-anchor="middle" class="t1">JESUS CRISTO</text>
+  <!-- divisória dourada com pequeno losango central -->
+  <line x1="128" y1="66" x2="202" y2="66" stroke="#E6B23E" stroke-width="1.4" opacity="0.85"/>
+  <line x1="238" y1="66" x2="312" y2="66" stroke="#E6B23E" stroke-width="1.4" opacity="0.85"/>
+  <path d="M220 61 l5 5 -5 5 -5 -5 z" fill="#E6B23E"/>
+  <text x="220" y="94" text-anchor="middle" class="t2">É o Senhor!</text>
+</svg>
