@@ -8,6 +8,7 @@ import BottomBar from "./components/BottomBar.jsx";
 import WhatsAppFab from "./components/WhatsAppFab.jsx";
 import ScrollTop from "./components/ScrollTop.jsx";
 import useReveal from "./components/useReveal.js";
+import useIsMobile from "./components/useIsMobile.js";
 import Home from "./pages/Home.jsx";
 import Estudos from "./pages/Estudos.jsx";
 import Ministerios from "./pages/Ministerios.jsx";
@@ -71,6 +72,7 @@ export default function App() {
   }, [page]);
 
   useReveal(page);
+  const isMobile = useIsMobile();
 
   return (
     <div className="app">
@@ -87,7 +89,7 @@ export default function App() {
           {page === "contato" && <Contato />}
         </div>
       </main>
-      <BottomBar page={page} go={go} />
+      {isMobile && <BottomBar page={page} go={go} />}
       <WhatsAppFab />
       <ScrollTop show={showTop} />
     </div>

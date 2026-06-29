@@ -79,22 +79,9 @@ const Styles = () => (
     @keyframes overlayIn{from{opacity:0}to{opacity:1}}
     @media(min-width:861px){.hdr-drawer,.hdr-overlay{display:none}}
 
-    /* ---------- BARRA FIXA INFERIOR (acesso rápido) ---------- */
-    .bar{position:fixed;bottom:0;left:0;right:0;height:var(--bar);z-index:40;
-      display:flex;align-items:stretch;justify-content:space-around;
-      background:rgba(11,11,12,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-      border-top:1px solid var(--line)}
-    .bar a{flex:1;background:none;border:0;color:var(--dim);cursor:pointer;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
-      font-size:11px;letter-spacing:.3px;text-decoration:none;transition:color .2s;position:relative}
-    .bar a svg{width:21px;height:21px}
-    .bar a.on{color:var(--gold)}
-    .bar a.on::before{content:"";position:absolute;top:0;width:26px;height:2px;
-      background:var(--gold);border-radius:2px}
-
     /* ---------- LAYOUT BASE ---------- */
     .main{position:relative;z-index:10;padding-top:var(--hdr);
-      padding-bottom:calc(var(--bar) + 8px);min-height:100vh}
+      padding-bottom:8px;min-height:100vh}
     .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
     .eyebrow{font-size:12px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;
       display:inline-flex;align-items:center;gap:10px}
@@ -251,6 +238,22 @@ const Styles = () => (
 
     /* ---------- RESPONSIVO ---------- */
     @media(max-width:860px){
+      /* ---------- BARRA FIXA INFERIOR (mobile) ---------- */
+      .bar{position:fixed;bottom:0;left:0;right:0;height:var(--bar);z-index:40;
+        display:flex;align-items:stretch;justify-content:space-around;
+        background:rgba(11,11,12,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+        border-top:1px solid var(--line)}
+      .bar a{flex:1;background:none;border:0;color:var(--dim);cursor:pointer;
+        display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+        font-size:11px;letter-spacing:.3px;text-decoration:none;transition:color .2s;position:relative}
+      .bar a svg{width:21px;height:21px}
+      .bar a.on{color:var(--gold)}
+      .bar a.on::before{content:"";position:absolute;top:0;width:26px;height:2px;
+        background:var(--gold);border-radius:2px}
+      .main{padding-bottom:calc(var(--bar) + 8px)}
+      .mdetail{min-height:calc(100vh - var(--hdr) - var(--bar) - 8px)}
+      .wa-fab{bottom:calc(var(--bar) + 16px)}
+      .to-top{bottom:calc(var(--bar) + 98px)}
       .hdr-nav{display:none}
       .hdr-burger{display:grid}
       .grid2{grid-template-columns:1fr}
@@ -405,7 +408,7 @@ const Styles = () => (
     .bonus .bx p{font-size:14px;color:var(--dim);max-width:560px;line-height:1.6}
 
     /* detalhe do ministério */
-    .mdetail{display:flex;flex-direction:column;min-height:calc(100vh - var(--hdr) - var(--bar) - 8px)}
+    .mdetail{display:flex;flex-direction:column;min-height:calc(100vh - var(--hdr) - 8px)}
     .mdetail .footer{margin-top:auto}
     .back{display:inline-flex;align-items:center;gap:8px;background:none;border:0;color:var(--dim);
       font-family:var(--sans);font-size:13px;cursor:pointer;padding:8px 0;margin-top:8px;transition:color .2s}
@@ -560,14 +563,14 @@ const Styles = () => (
     .hdr.scrolled{background:rgba(11,11,12,.9);border-bottom-color:var(--line)}
 
     /* ---------- WHATSAPP + VOLTAR AO TOPO ---------- */
-    .wa-fab{position:fixed;right:16px;bottom:calc(var(--bar) + 16px);z-index:45;width:48px;height:48px;
+    .wa-fab{position:fixed;right:16px;bottom:16px;z-index:45;width:48px;height:48px;
       border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;text-decoration:none;
       box-shadow:0 8px 22px rgba(0,0,0,.4);transition:transform .2s;animation:waPulse 2.6s ease-out infinite}
     .wa-fab:hover{transform:scale(1.08)}
     .wa-fab svg{width:25px;height:25px}
     @keyframes waPulse{0%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 0 rgba(37,211,102,.5)}
       100%{box-shadow:0 8px 22px rgba(0,0,0,.4),0 0 0 16px rgba(37,211,102,0)}}
-    .to-top{position:fixed;right:21px;bottom:calc(var(--bar) + 98px);z-index:45;width:34px;height:34px;
+    .to-top{position:fixed;right:21px;bottom:98px;z-index:45;width:34px;height:34px;
       border-radius:50%;background:var(--glass);border:1px solid var(--line);color:var(--gold);
       backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:grid;place-items:center;cursor:pointer;
       transition:transform .2s,background .2s,color .2s}
